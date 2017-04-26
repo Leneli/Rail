@@ -1,0 +1,121 @@
+.select-table {
+	margin-top: 18px;
+	width: 100%;
+
+	& td, & th {
+		padding: 0 25px;
+		vertical-align: top;
+	}
+	.select-row {
+		& td {
+			padding-top: 15px;
+		}
+	}
+	//header
+	&__head {
+		& > td, & > th {
+			height: 30px;
+			color: $white;
+			font-size: 11px;
+			font-weight: bold;
+			text-transform: uppercase;
+			vertical-align: middle;
+			empty-cells: show;
+			min-width: 15px;
+			&:first-child {border-radius: 15px 0 0 15px;}
+			&:last-child  {border-radius: 0 15px 15px 0;}
+		}
+
+		&_dark {
+			& > td, & > th {background: $dark;}
+		}
+
+		&_grey {
+			& > td, & > th {
+				background: $grey;
+				color: $dark;
+			} 
+		}
+	}
+
+	&__tbody {
+		&_underline {border-bottom: 2px solid rgba(216, 57, 59, 0.52);}
+	}
+}
+
+//lists
+.select-ul {
+	min-width: 115px;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	& > li {
+		display: block;
+	}
+
+
+	.tic-number {
+		display: inline-block;
+		width: 30px;
+		font-weight: bold;
+	}
+}
+
+.select-ol {
+	margin: 0;
+	font-weight: bold;
+	counter-reset: num;
+
+	& > li {
+		list-style: none;
+
+		&::before {
+			counter-increment: num;
+			content: counter(num);
+			padding-right: 6px;
+			color: #999;
+		}
+	}
+}
+
+
+
+
+
+.select-ul__price {
+	@extend .select-ul;
+	min-width: 90px;
+	& > li {
+		text-decoration: underline;
+		&::before {
+			content: "From ";
+			//padding-right: 5px;
+			font-size: 10px;
+			opacity: .4;
+		}
+	}
+}
+
+.select-ul__tickets {
+	@extend .select-ul;
+	display: inline-block;
+	padding-bottom: 7px;
+	margin-bottom: 7px;
+	border-bottom: 1px solid $dark-grey;
+
+	&::after {
+		content: "";
+		@extend .icon--collapse;
+		display: block;
+		position: absolute;
+		bottom: -10px;
+		left: calc(50% - 7px);
+	}
+}
+
+.select-ul__center {
+	@extend .select-ul;
+	display: inline-block;
+
+	& > li {text-align: left;}
+}
