@@ -1,0 +1,9 @@
+mixin switch(switchID, switchChecked)
+	.switch
+		if switchChecked
+			input.switch__check(id=`${switchID}` type="checkbox" checked)
+		else
+			input.switch__check(id=`${switchID}` type="checkbox")
+		label.switch__label(for=`${switchID}`)
+			span.switch__slider.switch__slider_on
+			span.switch__slider.switch__slider_off

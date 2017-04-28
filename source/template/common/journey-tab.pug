@@ -1,0 +1,104 @@
+table.details-table
+	tr
+		td
+			label(for="departure") Departure
+		td.details-table_flex
+			label(for="adv1") Advanced search
+			div
+				+switch("adv1", "checked")
+		td.details-table_square
+
+	tr.details-table__client
+		td
+			input#departure(type="text")
+		td
+			select
+				option(value="") text
+				option(value="") text
+				option(value="") text
+				option(value="") text
+		td
+			input.icon--revert_top(type="button", value="")
+
+	tr
+		td.text_gray
+			label(for="arrival") Arrival
+		td.details-table_flex.text_gray
+			label(for="adv2") Advanced search
+			div
+				+switch("adv2")
+		td.details-table_square
+
+	tr.details-table__client
+		td(colspan="2")
+			select#arrival
+				option text
+				option text
+				option text
+				option text
+		td
+			input.icon--revert_bot(type="button", value="")
+
+	tr
+		td
+			label(for="depdate") Departure date
+		td.details-table_flex
+			label(for="dep") Departure time
+			div
+				+switch("dep", "checked")
+		td.details-table_square
+
+	tr.details-table__client
+		td
+			input#depdate(type="date")
+		td(colspan="2")
+			.route-form__labels
+				select.not-margin
+					option(value="") 00:00
+					option(value="") 10:00
+					option(value="") 15:00
+					option(value="") 23:00
+				span  — 
+				select.not-margin
+					option(value="") 00:00
+					option(value="") 10:00
+					option(value="") 15:00
+					option(value="") 23:00
+
+	tr.details-table__client
+		td(colspan="3")
+			.route-form__labels
+				label(for="adult")
+					span.icon--adult.mrg10_r
+				select#adult
+					option(value="") 1
+					option(value="") 2
+					option(value="") 3
+
+				label(for="child")
+					span.icon--child.mrg10
+				select#child
+					option(value="") 1
+					option(value="") 2
+					option(value="") 3
+
+				label(for="infant")
+					span.icon--infant.mrg10
+				select.not-margin#infant
+					option(value="") 1
+					option(value="") 2
+					option(value="") 3
+	tr
+		td
+			.route-form__labels
+				span 
+					label(for="lang") Language 
+				select#lang
+					option(value="") English
+
+		td(colspan="2")
+			.route-form__labels
+				span
+					label(for="price") Show price 
+				select.not-margin#price
+					option(value="") $ USD

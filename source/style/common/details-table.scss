@@ -1,0 +1,30 @@
+.details-table {
+    $p-padding: 12px;
+
+    width: 100%;
+    &__title > td,
+    &__client > td {
+        padding-bottom: $p-padding;
+    }
+
+    & > tbody > tr > td:not(:last-child) {
+        padding-right: $p-padding;
+    }
+
+    & > tbody > tr > td.details-table_square {
+        width: 26px;
+        padding-right: 0;
+        text-align: center;
+        vertical-align: bottom;
+    }
+
+    &_flex {
+        display: flex;
+        justify-content: space-between;
+    }
+	
+    & input,
+    & select {
+        width: 100%;
+    }
+}

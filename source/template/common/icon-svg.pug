@@ -1,0 +1,9 @@
+mixin iconSVG(svgClass, svgWidth, svgHeight)
+	svg(xmlns='http://www.w3.org/2000/svg', width=`${svgWidth}`, height=`${svgHeight}`, viewbox=`0 0 ${svgWidth} ${svgHeight}`, class=`${svgClass}`)
+		path(d='M0 5h16v3l7-4-7-4v3H0z')
+
+
+//- icons
+
+mixin arrowRight()
+	+iconSVG("fill-lightred", 24, 8)

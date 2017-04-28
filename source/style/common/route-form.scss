@@ -1,0 +1,56 @@
+$font-size: 12px;
+
+
+.route-form {
+    @mixin route-form( $rf-width, $rf-height) {
+        width: $rf-width;
+        height: $rf-height;
+        @media screen and (max-width: $media-tablets) {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    @include route-form(400px, auto);
+    position: relative;
+    border: 1px solid $dark-grey;
+    font-size: $font-size;
+
+    &__header {
+        background: url(../img/logo.svg) 95% 29% no-repeat $red;
+        color: $white;
+        font-weight: bold;
+        padding: $font-size 90px $font-size $font-size;
+    }
+	
+    &__footer {
+        padding: 0 $standart-padding ($font-size * 0.8) $standart-padding;
+    }
+
+    /* inputs */
+    &__labels {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & > * {
+            flex-grow: 1;
+        }
+
+        & > span { line-height: $input-height; }
+
+        .switch__label {
+            top: 3px;
+        }
+    }
+	
+    &__labels:not(:last-of-type) {
+        margin-bottom: $standart-padding / 2;
+    }
+
+    .mrg10 {
+        margin: 0 3px 0 14px;
+        &_r { margin-right: 3px; }
+    }
+}

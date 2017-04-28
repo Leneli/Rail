@@ -1,0 +1,71 @@
+$tabs-number: 2; //the number of tabs
+
+
+.tabs {
+	display: flex;
+	flex-direction: column;
+	min-height: 326px;
+
+	/* Стили переключателей вкладок (табов) */
+	&__header {
+		display: flex;
+		flex-wrap: nowrap;
+
+		&_title {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			flex-basis: 100% / $tabs-number;
+			font-weight: bold;
+			text-align: center;
+			height: $font-size * 2.5;
+			line-height: $font-size * 2.5;
+			font-size: $font-size;
+			background: $light;
+			border: 1px solid $dark-grey;
+			border-left: none;
+			cursor: pointer;
+
+			& > * {
+				position: inherit;
+			}
+			
+			&:last-of-type {
+				border-right: none;
+			}
+		}
+	}
+
+	/* Скрыть чекбоксы */
+	&__header > input[type=radio].tabs__header_title {
+		display: none;
+		position: absolute;
+		opacity: 0;
+		/* Стили для активной вкладки */
+		&:checked+label {
+			background: $white;
+			border-bottom: none;
+		}
+	}
+
+	/* Стили секций с содержанием */
+	& > section:first-of-type {
+		display: block;
+	}
+
+	& > section {
+		display: none;
+		background: $white;
+		padding: $standart-padding;
+		
+		div {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+	}
+}

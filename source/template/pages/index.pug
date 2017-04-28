@@ -1,6 +1,35 @@
 extends ../_template
 
 block variables
-  - var title = 'Home page'
+	- var title = "Step 1"
+
 
 block content
+	.TEST
+
+		section.route-form
+			.route-form__header Powered by Realrussia.co.uk
+
+			form#route(action="route")
+				.tabs
+					// Tabs header
+					.tabs__header
+						input#tab1.tabs__header_title(type="radio", name="tabs", checked="")
+						label.tabs__header_title(for="tab1", title="Journey details")
+							span Journey details
+						input#tab2.tabs__header_title(type="radio", name="tabs")
+						label.tabs__header_title(for="tab2", title="Personal info")
+							span.button_green_circle ?
+							span.padding-l5 Personal info
+
+					// Tab 1 - Journey details
+					section#content-tab1
+						include ../common/journey-tab
+
+					// Tab 2 - Personal info
+					section#content-tab2
+						include ../common/personal-tab
+
+				// .tabs - END
+				.route-form__footer.text-right
+					input.button_set3_green(type="button", value="SEARCH")

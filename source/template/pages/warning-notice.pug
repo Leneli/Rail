@@ -1,0 +1,18 @@
+extends ../_template
+
+block variables
+	- var title = 'Step 1 - Warning'
+
+block content
+	.TEST
+		section.route-form
+			.red-window
+				button.close_in-red-window
+					span.close__icon
+				.red-window__content
+					h3 Notice
+					p
+						| If you need more than one infant ticket, you may receive only one per one adult passenger. All the rest tickets will cost as child fare (that is 50% of adult ticket price)
+					.red-window__bottom-btn
+						input.button_set3_white(type='button', value='Cancel')
+						input.button_set3_nocolor(type='button', value='ok')

@@ -1,0 +1,20 @@
+mixin client-tr(letter, icon)
+	tr.details-table__client
+		td.details-table_square
+			input.square(type="button", value=`${letter}`, disabled)
+		td.details-table_square
+			span(class=`icon--${icon}`)
+		td
+			select
+				option(value="") 1 y.o.
+				option(value="") 10 y.o.
+				option(value="") 20 y.o.
+				option(value="") 30 y.o.
+				option(value="") 40 y.o.
+		td
+			include ../common/gender
+
+		td
+			select
+				option(value="") RU
+				option(value="") UK

@@ -1,0 +1,18 @@
+extends ../_template
+
+block variables
+	- var title = 'Step 1 - Warning'
+
+block content
+	.TEST
+		section.route-form
+			.red-window
+				button.close_in-red-window
+					span.close__icon
+				.red-window__content
+					h3 Please leave your personal info
+					p Skipping this step makes pricing less accurate
+					.red-window__full-btn
+						input.button_set3_white(type='button', value='Fill personal info')
+					.red-window__full-btn
+						input.button_set3_nocolor(type='button', value='Continue anyway')

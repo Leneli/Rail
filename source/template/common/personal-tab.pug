@@ -1,0 +1,27 @@
+table.details-table
+	tr.details-table__title
+		td
+		td
+		td.details-table_flex.text_gray
+			span.padding-r10 
+				label(for="birth") Date of birth
+			div
+				+switch("birth")
+		td Gender
+		td Citizenship
+
+
+	// Clients
+	include ../common/personal-client-tr
+	+client-tr("A", "adult")
+	+client-tr("B", "adult")
+	+client-tr("C", "child")
+	+client-tr("D", "infant")
+	// Clients - END
+
+
+	tr.details-table__contact
+		td(colspan="3")
+			input(placeholder="Phone number")
+		td(colspan="2")
+			input(type="email" placeholder="Enter your e-mail")

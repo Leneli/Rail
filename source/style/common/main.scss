@@ -94,7 +94,12 @@ option {
 }
 
 .warning-input {
+    color: $red;
     border-color: $red;
+    background: #ffe4e4;
+    &:focus {
+        outline-color: $red;
+    }
 }
 
 .text-upper {
@@ -107,6 +112,14 @@ option {
 
 .padding-t20 {
     padding-top: 20px;
+}
+
+.padding-l5 {
+    padding-left: 5px;
+}
+
+.padding-r10 {
+    padding-right: 10px;
 }
 
 .padding-r20 {
@@ -141,10 +154,9 @@ option {
 //по завершении - УДАЛИТЬ
 .TEST {
     display: flex;
-    justify-content: space-between;
-    &>* {
-        flex-basis: 30%;
-    }
+    justify-content: space-around;
+    margin: 50px;
+    min-height: 405px;
 }
 //TEST - конец
 

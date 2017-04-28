@@ -1,0 +1,193 @@
+extends ../_template
+
+block variables
+	- var title = 'Step 2 - Details'
+	- var testBodyStyle = "width: 100%;";
+
+block popups
+	.popup-bg.popup-bg_black
+		.select-window
+			button.close_in-popup
+				span.close__icon
+			.select-window__content
+				.select-window__item
+					.padding-r20
+						label.padding-r20.text-upper price
+						select
+							option(value='...') USD $
+					.padding-r30
+						span.text-upper LOCAL TIME 
+						+switch("lt2", "checked")
+					.padding-r30
+						span.text-upper KILOMETERS 
+						+switch("km", "checked")
+					div
+						span.text-upper miles 
+						+switch("miles")
+				.select-window__item.select-window__item_data
+					.direction.direction_margin.data_col
+						.direction-name
+							span.direction-name_bold 748A
+							span.direction-name_upper Baltijskij E'kspress
+						.direction-city
+							p From
+							span.direction-name_bold Moscow
+							p Leningradskiy station
+						.select-window__item.select-window__item_data
+							.data_col
+								p Departure date
+								time.direction-time 21.06.15
+								p Run time
+								span.direction-dist 2d 12h 20m
+							.data_col
+								p Departure time
+								time.direction-time 15:00
+								span.utc (UTC+3)
+								p Distance
+								span.direction-dist 650 km
+					.direction.direction_margin.data_col
+						.direction-name
+							ul.raiting
+								li.raiting__punkt_yellow
+								li.raiting__punkt_yellow
+								li.raiting__punkt_yellow
+								li.raiting__punkt_yellow
+								li.raiting__punkt
+							span.direction-name 4,7
+							span.direction-name_small (65 266 people rated)
+						.direction-city
+							p To
+							span.direction-name_bold Saint Petesburg
+							p Ladozhskiy station
+						.select-window__item.select-window__item_data
+							.data_col
+								p Arrival date
+								time.direction-time 22.06.15
+								p Countries to visit
+								.flag-list
+									.icon--s1
+									.icon--s1
+									.icon--s1
+							.data_col
+								p Arrival time
+								time.direction-time 11:00
+								span.utc (UTC+3)
+								p Train type
+								ul.train-type
+									li.train-type__item.train-type_orange(data-type='Firm')
+									li.train-type__item.train-type_orange(data-type='Fast')
+									li.train-type__item.train-type_green(data-type='E-reg')
+									li.train-type__item.train-type_blue(data-type='Wi-Fi')
+				.select-window__item.select-window__item_data
+					// table 1
+					table.select-table
+						thead
+							tr.select-table__head.select-table__head_grey
+								td Class Type
+								td Owner
+								td Tickets
+								td
+									span.icon--adult
+									|  Adult
+								td
+									span.icon--child
+									|  Child
+								td
+									span.icon--infant
+									|  Infant
+						tbody.select-table__tbody
+							tr.select-row
+								td.text-upper10
+									.padding-b10 1st class (lux)
+									.icon--s1
+									.icon--s2
+									.icon--s3
+								td
+									span.button_owner Тверск
+								td
+									ul.select-ul__tickets
+										li
+											span.tic-number 78
+											|  bottom
+										li
+											span.tic-number 164
+											|  top
+										li
+											span.tic-number 45
+											|  side bottom
+										li
+											span.tic-number 84
+											|  side top
+								td
+									ul.select-ul__price
+										li 120.11£
+										li 120.11£
+										li 120.11£
+										li 120.11£
+								td
+									ul.select-ul__price
+										li 60.00£
+										li 60.00£
+										li 60.00£
+										li 60.00£
+								td
+									ul.select-ul__price
+										li 50.00£
+										li 50.00£
+										li 50.00£
+										li 50.00£
+					// table 2
+					table.select-table
+						thead
+							tr.select-table__head.select-table__head_dark
+								td Station
+								td.text-center Arrival
+								td.text-center Standing
+								td.text-center Distance, km
+						tbody.select-table__tbody
+							tr.select-row
+								td
+									ol.select-ol
+										li Moscow
+										li Tver
+										li Likhoslavl
+										li Okulovka
+										li Mstinskiy Most
+										li Saint Petersburg
+								td.text-center
+									ul.select-ul__center
+										li 25 Mar, 00:28
+										li 25 Mar, 00:28
+										li 25 Mar, 00:28
+										li 25 Mar, 00:28
+										li 25 Mar, 00:28
+										li 25 Mar, 00:28
+								td.text-center
+									ul.select-ul__center
+										li 00:17
+										li 00:17
+										li 00:17
+										li 00:17
+										li 00:17
+										li 00:17
+								td.text-center
+									ul.select-ul__center
+										li 0
+										li 167
+										li 15
+										li 401
+										li 404
+										li 650
+					p.text_red.padding-t20 * Departure and arrival times for trains in Russia are shown in Moscow time.
+				.select-window__item.select-window__item_socials
+					div
+						span.text-upper10 share
+						div
+							.icon--google-plus
+							.icon--facebook
+							.icon--twitter
+							.icon--mail
+					div
+						span.text-upper10 print
+						div
+							.icon--print

@@ -1,0 +1,66 @@
+.trains-filter
+	.trains-filter__header
+		.trains-filter__column.filter_column_lg
+			label.padding-r20 Sort trains by 
+			select
+				option(value='...') Departure time
+				option(value='...') 00:00
+				option(value='...') 01:00
+				option(value='...') 02:00
+		.trains-filter__column.filter_column_lg
+			label.padding-r20 Departure time 
+			select
+				option(value='...') 00:00
+				option(value='...') 01:00
+				option(value='...') 02:00
+				option(value='...') 03:00
+			| 				 – 
+			select
+				option(value='...') 24:00
+				option(value='...') 00:00
+				option(value='...') 01:00
+				option(value='...') 02:00
+		.trains-filter__column.filter_column_lg
+			label.padding-r20 Price 
+			select
+				option(value='...') USD $
+			.filter_local-time
+				span LOCAL TIME
+				+switch("lt1", "checked")
+
+		.trains-filter__column.filter_column_sm.text-right
+			label.text_dark
+				b Clear all filters
+				button.close_grey
+					b
+						span.close__icon
+	.trains-filter__body
+		.trains-filter__column.filter_column_lg
+			.filter_column__div Type
+			.filter_column__div
+				button.button_set1_wt-gray.filter_button Passenger
+				button.button_set1_wt-gray.filter_button Fast
+			.filter_column__div
+				button.button_set1_wt-gray.filter_button Firmenny
+				button.button_set1_green.filter_button High speed
+		.trains-filter__column.filter_column_lg
+			.filter_column__div Price
+			.filter_column__div
+				button.button_set1_wt-gray.filter_button.button_icon_dinamic Dinamic
+				button.button_set1_wt-gray.filter_button.button_icon_guarantee Guaranteed
+			.filter_column__div
+				button.button_set1_wt-gray.filter_button.button_icon_calculated Calculated
+				button.button_set1_wt-gray.filter_button.button_icon_estimated Estimated
+		.trains-filter__column.filter_column_lg
+			.filter_column__div Class
+			.filter_column__div
+				button.button_set1_wt-gray.filter_button 1st class
+				button.button_set1_wt-gray.filter_button 2nd class
+			.filter_column__div
+				button.button_set1_wt-gray.filter_button 3nd class
+				button.button_set1_wt-gray.filter_button Seat only
+		.trains-filter__column.filter_column_sm
+			.filter_column__div MEALS
+			.filter_column__div
+				button.button_set1_wt-gray.filter_button Yes
+				button.button_set1_wt-gray.filter_button No

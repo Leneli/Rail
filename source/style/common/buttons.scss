@@ -23,6 +23,7 @@ input[class^="button"] {
     vertical-align: middle;
     text-decoration: none;
     font-weight: bold;
+    &:focus { outline: none; }
 
     &:hover {
         text-decoration: none;
@@ -90,6 +91,7 @@ input[class^="button"] {
     &[class*="_circle"] {
         width: 26px;
         height: 26px;
+        line-height: 26px;
     }
 }
 
