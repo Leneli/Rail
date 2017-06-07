@@ -30,6 +30,11 @@ $g-not: #999999;
 	& > li {
 		display: inline-block;
 		vertical-align: middle;
+
+		@include phones {
+			display: block;
+			margin: 3px 40px;
+		}
 	}
 
 	@each $item in $legend {
@@ -125,6 +130,11 @@ $g-not: #999999;
 	background: rgba(211, 211, 211, 0.14);
 	border-radius: 5px;
 
+	@include phones {
+		width: 100%;
+		margin: 0;
+	}
+
 	&__header {
 		position: absolute;
 		left: -7px;
@@ -135,15 +145,18 @@ $g-not: #999999;
 		color: $white;
 		text-align: center;
 		border-radius: 17px;
+
+		@include phones {
+			width: 100%;
+			left: 0;
+			border-radius: 0;
+		}
 	}
 
 	&__calender {
 		margin-top: $month-height-head;
 		width: 100%;
 		height: $month-height - $month-height-head;
-		
-		//убрать на всякий случай бордеры
-		
 
 		& > tbody {
 			text-align: center;
@@ -151,14 +164,26 @@ $g-not: #999999;
 
 		& tr {
 			margin: 10px 0;
+
+			@include phones {
+				margin: 0;
+			}
 			
 		}
 		& th {font-weight: normal;}
+		
 		& td,
 		& th {
 			min-width: 40px;
 			min-height: 40px;
 			font-size: $month-font-size;
+
+			@include phones {
+				min-width: 20px;
+				min-height: 20px;
+				font-size: 12px;
+				box-sizing: content-box;
+			}
 		}
 	}
 
@@ -167,22 +192,43 @@ $g-not: #999999;
 			background-image: url($url);
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
+
+			@include phones {
+				background-image: none;
+			}
 		}
 
 		&_notrains {
 			color: $lilo;
 			@include day-bg("../img/no-trains.png");
+
+			@include phones { 
+				color: $white;
+				background-color: $lilo;
+			}
 		}
 
 		&_available {
 			@include day-bg("../img/available.png");
 			cursor: pointer;
+
+			@include phones {
+				border: 2px solid $green;
+			}
+		}
+
+		&_notavailable {
+			color: $g-not;
 		}
 
 		&_selected {
 			color: $white;
 			@include day-bg("../img/selected.png");
 			cursor: pointer;
+
+			@include phones {
+				background-color: $green;
+			}
 		}
 
 		&_today {
@@ -191,6 +237,7 @@ $g-not: #999999;
 
 		&_last {
 			color: $g-not;
+			opacity: .3;
 		}
 	}
 }

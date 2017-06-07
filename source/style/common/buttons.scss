@@ -23,6 +23,8 @@ input[class^="button"] {
     vertical-align: middle;
     text-decoration: none;
     font-weight: bold;
+    cursor: pointer;
+
     &:focus { outline: none; }
 
     &:hover {
@@ -91,25 +93,38 @@ input[class^="button"] {
     &[class*="_circle"] {
         width: 26px;
         height: 26px;
-        line-height: 26px;
+        //line-height: 26px;
     }
 }
 
 //button close
 button.close {
-    @mixin close( $position-type, $cross-size, $cross-color, $cross-opacity, $position-top, $position-right, $position-bottom, $position-left) {
+    @mixin close( 
+            $position-type: absolute,
+            $scale: 3, 
+            $cross-color: #8a8a8a, 
+            $cross-opacity: 0.6, 
+            $position-top: 0, 
+            $position-right: 0, 
+            $position-bottom: auto, 
+            $position-left: auto) 
+        {
         position: $position-type;
         background: transparent;
         border: 0;
         color: $cross-color;
         opacity: $cross-opacity;
-        font-size: $cross-size;
+        //font-size: $cross-size;
         font-weight: normal;
         outline: none;
         top: $position-top;
         right: $position-right;
         bottom: $position-bottom;
         left: $position-left;
+        cursor: pointer;
+
+        transform: scale($scale);
+
         /* Крестик */
         span.close__icon {
             display: block;
@@ -126,15 +141,18 @@ button.close {
     }
     /* Кнопка "закрыть" в блоке .red-window */
     &_in-red-window {
-        @include close(absolute, ($font-size * 3), $white, 0.6, 0, 10px, auto, auto);
+        @include close($cross-color: $white, $position-top: 10px, $position-right: 10px);
     }
-    /* Кнопка "закрыть" в блоке .red-window */
+    /* Кнопка "закрыть" во всплывающем окне на 2ом шаге */
     &_in-popup {
-        @include close(absolute, ($font-size * 3), #8a8a8a, 0.6, 0, 10px, auto, auto);
+        @include close($position-top: 10px, $position-right: 20px);
     }
     /* Кнопка в фильтре */
     &_grey {
-        @include close(relative, ($font-size * 2), #666, 1, -2px, 5px, auto, auto);
+        @include close( $position-type: relative, 
+                        $scale: 2, 
+                        $cross-color: #666, 
+                        $cross-opacity: 1);
     }
 }
 

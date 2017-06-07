@@ -4,6 +4,7 @@
 //- include
 include ./common/switch
 include ./common/icon-svg
+include ./common/clear-filter-button
 
 block variables
 
@@ -30,50 +31,52 @@ html
 		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
 		<![endif]-->
 
-	body(style=`${testBodyStyle}`)
+	body
 
-	block popups
+		block popups
 
-		.trains-header
-			div
-				h2.text_dark Select train
-				.scale
-					.scale__item.done(data-step="1")
-					.scale__item.activ(data-step="2")
-					.scale__item(data-step="3")
-					.scale__item(data-step="4")
-					.scale__item(data-step="5")
-			div
-				.sign-in-up.text-right
-					a(href="#") Sign in
-					span  
-					a(href="#") Sign up
+		.wrapper
+
+			.trains-header
 				div
-					| Information service 
-					input.button_green_circle(type="button", value="?")
+					h2.text_dark Select train
+					.scale
+						.scale__item.done(data-step="1")
+						.scale__item.activ(data-step="2")
+						.scale__item(data-step="3")
+						.scale__item(data-step="4")
+						.scale__item(data-step="5")
+				div
+					.sign-in-up.text-right
+						a(href="#") Sign in
+						span  
+						a(href="#") Sign up
+					div
+						| Information service 
+						input.button_green_circle(type="button", value="?")
 
-		
-		block content
+			
+			block content
 
 
-		.trains-footer
-			div
-				input.button_set3_red(type="button", value="CLEAR")
-				input.button_set3_green(type="button", value="save")
-				input.button_set3_gray(type="button", value="RESTORE")
-			div
-				input.button_set3_gray(type="button", value="BACK")
-				input.button_set3_green(type="button", value="NEXT")
+			.trains-footer
+				div
+					input.button_set3_red(type="button", value="CLEAR")
+					input.button_set3_green(type="button", value="save")
+					input.button_set3_gray(type="button", value="RESTORE")
+				div
+					input.button_set3_gray(type="button", value="BACK")
+					input.button_set3_green(type="button", value="NEXT")
 
-		div(style="margin: 50px 0 10px 0; padding: 15px; border: 2px solid #ccc; text-align: center;")
-			a(href="/") Step 1 - Widget
-			span  | 
-			a(href="/warning-personal.html") Step 1 - Warning: Personal info
-			span  | 
-			a(href="/warning-notice.html") Step 1 - Warning: Notice
-			span  | 
-			a(href="/schedule.html") Step 2 - Schedule
-			span  | 
-			a(href="/select.html") Step 2 - Select train
-			span  | 
-			a(href="/details.html") Step 2 - Details popup
+			div(style="margin: 50px 0 10px 0; padding: 15px; border: 2px solid #ccc; text-align: center;")
+				a(href="/") Step 1 - Widget
+				span  | 
+				a(href="/warning-personal.html") Step 1 - Warning: Personal info
+				span  | 
+				a(href="/warning-notice.html") Step 1 - Warning: Notice
+				span  | 
+				a(href="/schedule.html") Step 2 - Schedule
+				span  | 
+				a(href="/select.html") Step 2 - Select train
+				span  | 
+				a(href="/details.html") Step 2 - Details popup

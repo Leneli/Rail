@@ -5,7 +5,8 @@ block variables
 
 block content
 	.TEST
-		section.route-form
+		//-удалить style - они нужны для корректного отображения пустой формы в IE
+		section.route-form(style="height: 400px;")
 			.red-window
 				button.close_in-red-window
 					span.close__icon

@@ -6,7 +6,8 @@
 		flex-direction: row;
 		justify-content: space-between;
 		width: 100%;
-		@media screen and (max-width: $media-smartphones) {
+
+		@include phones {
 			flex-direction: column-reverse;
 			&>div {
 				display: flex;
@@ -18,17 +19,26 @@
 			}
 		}
 	}
+
 	&-header {
 		margin-bottom: 10px;
 	}
+
 	&-footer {
 		margin-top: 36px;
+
+		@include tablets {
+			flex-direction: column;
+			& > div { margin: 5px 0; }
+		}
 	}
+
 	&-header>div {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
 	}
+
 	//Red field with routes
 	&-leg {
 		display: flex;
@@ -39,6 +49,10 @@
 		h3 {
 			color: $white;
 			margin: 0;
+
+			@include phones {
+				margin-bottom: 5px;
+			}
 		}
 		&__field {
 			display: flex;
@@ -50,9 +64,23 @@
 			border-radius: 2px;
 			margin-right: 3px;
 			padding: 0 10px;
+
+			@include phones {
+				width: 100%;
+				margin-bottom: 5px;
+			}
 		}
 		&__field:first-of-type {
 			margin-left: 16px;
+
+			@include phones {
+				margin-left: 0;
+			}
+		}
+
+		@include phones {
+			flex-direction: column;
+			border-radius: 0;
 		}
 	}
 	//Filter
@@ -104,10 +132,17 @@
 			//alignment divs in .trains-filter__body
 			.filter_column__div {
 				display: table-cell;
+				
 				&:first-child {
 					padding-right: 15px;
 					padding-top: 4px;
 					vertical-align: top;
+
+					width: 20%;
+				}
+
+				&:not(:first-child) {
+					width: 40%;
 				}
 			}
 

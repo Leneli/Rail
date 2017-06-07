@@ -28,39 +28,59 @@
 				span LOCAL TIME
 				+switch("lt1", "checked")
 
-		.trains-filter__column.filter_column_sm.text-right
-			label.text_dark
-				b Clear all filters
-				button.close_grey
-					b
-						span.close__icon
+		.trains-filter__column.filter_column_sm.text-right.text_bold
+			+clearFilter("Clear all filters", "clrAll")
+				
 	.trains-filter__body
 		.trains-filter__column.filter_column_lg
-			.filter_column__div Type
+			.filter_column__div
+				span.text-upper Type
 			.filter_column__div
 				button.button_set1_wt-gray.filter_button Passenger
 				button.button_set1_wt-gray.filter_button Fast
+				button.button_set1_wt-gray.filter_button
+					b ALL
+
 			.filter_column__div
 				button.button_set1_wt-gray.filter_button Firmenny
 				button.button_set1_green.filter_button High speed
+				.text-right.padding-r20
+					+clearFilter("Clear", "clrType")
+
+
 		.trains-filter__column.filter_column_lg
-			.filter_column__div Price
+			.filter_column__div
+				span.text-upper Price
 			.filter_column__div
 				button.button_set1_wt-gray.filter_button.button_icon_dinamic Dinamic
 				button.button_set1_wt-gray.filter_button.button_icon_guarantee Guaranteed
+				button.button_set1_wt-gray.filter_button
+					b ALL
+
 			.filter_column__div
 				button.button_set1_wt-gray.filter_button.button_icon_calculated Calculated
 				button.button_set1_wt-gray.filter_button.button_icon_estimated Estimated
+				.text-right.padding-r20
+					+clearFilter("Clear", "clrPrice")
+
 		.trains-filter__column.filter_column_lg
-			.filter_column__div Class
+			.filter_column__div
+				span.text-upper Class
 			.filter_column__div
 				button.button_set1_wt-gray.filter_button 1st class
 				button.button_set1_wt-gray.filter_button 2nd class
+				button.button_set1_wt-gray.filter_button
+					b ALL
+
 			.filter_column__div
 				button.button_set1_wt-gray.filter_button 3nd class
 				button.button_set1_wt-gray.filter_button Seat only
+				.text-right.padding-r20
+					+clearFilter("Clear", "clrClass")
+
 		.trains-filter__column.filter_column_sm
-			.filter_column__div MEALS
+			.filter_column__div
+				span.text-upper MEALS
 			.filter_column__div
 				button.button_set1_wt-gray.filter_button Yes
 				button.button_set1_wt-gray.filter_button No

@@ -7,6 +7,7 @@
 
 body {
     width: 100%;
+    margin: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: $font-size;
     color: $dark;
@@ -87,12 +88,17 @@ option {
     color: $red;
 }
 
+.text_bold {
+    font-weight: bold;
+}
+
 .text-upper10 {
     font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
+//inputs
 .warning-input {
     color: $red;
     border-color: $red;
@@ -102,8 +108,18 @@ option {
     }
 }
 
+.input-nobg {
+    border: none;
+	background: none;
+	outline: none;
+}
+
 .text-upper {
     text-transform: uppercase;
+}
+
+.text-underl {
+    text-decoration: underline;
 }
 
 .padding-b10 {
@@ -116,6 +132,14 @@ option {
 
 .padding-l5 {
     padding-left: 5px;
+}
+
+.padding-l10 {
+    padding-left: 10px;
+}
+
+.padding-l20 {
+    padding-left: 20px;
 }
 
 .padding-r10 {
@@ -145,7 +169,15 @@ option {
 }
 
 
+//wrapper
+.wrapper {
+    width: 96%; 
+    margin: auto;
 
+    @include phones {
+        width: 100%;
+    }
+}
 
 
 
@@ -157,6 +189,13 @@ option {
     justify-content: space-around;
     margin: 50px;
     min-height: 405px;
+
+    @include tablets {
+        margin: 10px 0;
+    }
+    @include phones {
+        margin: 0;
+    }
 }
 //TEST - конец
 

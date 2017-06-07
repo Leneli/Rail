@@ -1,14 +1,20 @@
 .select-table {
 	margin-top: 18px;
 	width: 100%;
+	border-collapse: collapse;
 
 	& td, & th {
+		position: relative;
 		padding: 0 25px;
 		vertical-align: top;
 	}
+
 	.select-row {
 		& td {
 			padding-top: 15px;
+			padding-bottom: 5px;
+
+			& > div {padding: 4px 0;}
 		}
 	}
 	//header
@@ -41,6 +47,15 @@
 	&__tbody {
 		&_underline {border-bottom: 2px solid rgba(216, 57, 59, 0.52);}
 	}
+}
+
+//icons in table head
+
+.th-icon {
+	position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 //lists
@@ -79,7 +94,14 @@
 }
 
 
-
+.no-prices {
+	display: block;
+	width: 100px;
+	padding: 10px;
+	background: $light-grey;
+	color: $dark-grey;
+	font-size: 90%;
+}
 
 
 .select-ul__price {
@@ -118,4 +140,12 @@
 	display: inline-block;
 
 	& > li {text-align: left;}
+}
+
+//wrapper for table
+.table-wrapper {
+	& > table { min-width: 1000px; }
+	
+	@include laptops { overflow-x: scroll; }
+	
 }

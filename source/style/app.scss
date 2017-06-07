@@ -87,6 +87,25 @@ $color7, $color8) {
     transition: $params;
 }
 
+//media-queries
+@mixin laptops() {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin tablets() {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin phones() {
+    @media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
 
 //подключенные файлы
 @import "sprite";
